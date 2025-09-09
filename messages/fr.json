@@ -1,0 +1,13 @@
+{
+    "home": {
+        "title": "Accueil depuis nextintl",
+        "description": "Description de la page d'accueil"
+    },
+    "landing": {
+        "navbar": {
+            "description": "Découvrez votre appartement de location idéal grâce à notre recherche avancée",
+            "signIn": "Se connecter",
+            "signUp": "S'inscrire"
+        }
+    }
+}

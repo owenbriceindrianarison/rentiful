@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { hasLocale } from 'next-intl'
-import Provider from '@/app/Provider'
+import { hasLocale, NextIntlClientProvider } from 'next-intl'
+import Providers from '@/app/providers'
 import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
 import '../globals.css'
@@ -40,7 +40,9 @@ export default async function RootLocaleLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <Provider>{children}</Provider>
+                <NextIntlClientProvider>
+                    <Providers>{children}</Providers>
+                </NextIntlClientProvider>
             </body>
         </html>
     )

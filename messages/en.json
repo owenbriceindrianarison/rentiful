@@ -2,5 +2,12 @@
     "home": {
         "title": "Home from nextintl",
         "description": "Home description"
+    },
+    "landing": {
+        "navbar": {
+            "description": "Discover your perfect rental apartment with our advenced search",
+            "signIn": "Sign In",
+            "signUp": "Sign Up"
+        }
     }
 }
