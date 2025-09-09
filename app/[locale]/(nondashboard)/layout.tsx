@@ -7,7 +7,7 @@ export default function NonDashboardLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className='bg-primary-100 h-full w-full'>
+        <div className='h-full w-full'>
             <Navbar />
             <main
                 className='flex h-full w-full flex-col'
