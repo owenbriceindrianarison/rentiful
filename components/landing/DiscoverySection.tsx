@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { DiscoverCard } from '@/components/DiscoverCard'
+import { DiscoverCard } from '@/components/landing/DiscoverCard'
 
 const containerVariants = {
     hidden: { opacity: 0 },

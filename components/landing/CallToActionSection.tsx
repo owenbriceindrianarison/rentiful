@@ -24,7 +24,7 @@ export function CallToActionSection() {
             >
                 <div className='flex flex-col items-center justify-between md:flex-row'>
                     <div className='mb-6 md:mr-10 md:mb-0'>
-                        <h2 className='text-2xl font-bold text-white'>
+                        <h2 className='text-center text-2xl font-bold text-white md:text-start'>
                             Find Your Dream Rental Property
                         </h2>
                     </div>

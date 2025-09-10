@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/Navbar'
+import { Navbar } from '@/components/landing/Navbar'
 import { NAVBAR_HEIGHT } from '@/lib/constants'
 
 export default function NonDashboardLayout({

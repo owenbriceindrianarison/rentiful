@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FeaturedCard } from './FeaturedCard'
+import { FeaturedCard } from '@/components/landing/FeaturedCard'
 
 const containerVariants = {
     hidden: { opacity: 0, y: 50 },

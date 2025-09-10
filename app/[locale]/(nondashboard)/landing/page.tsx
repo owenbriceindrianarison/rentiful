@@ -1,7 +1,8 @@
-import { HeroSection } from '@/components/HeroSection'
-import { FeaturesSection } from '@/components/FeaturesSection'
-import { DiscoverySection } from '@/components/DiscoverySection'
-import { CallToActionSection } from '@/components/CallToActionSection'
+import { HeroSection } from '@/components/landing/HeroSection'
+import { FeaturesSection } from '@/components/landing/FeaturesSection'
+import { DiscoverySection } from '@/components/landing/DiscoverySection'
+import { CallToActionSection } from '@/components/landing/CallToActionSection'
+import { FooterSection } from '@/components/landing/FooterSection'
 
 export default function LandingPage() {
     return (
@@ -10,6 +11,7 @@ export default function LandingPage() {
             <FeaturesSection />
             <DiscoverySection />
             <CallToActionSection />
+            <FooterSection />
         </div>
     )
 }
