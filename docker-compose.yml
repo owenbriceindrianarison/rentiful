@@ -14,3 +14,20 @@ services:
               target: /app
             - type: volume
               target: /app/node_modules
+
+    # web-unit-test:
+    #     container_name: web-unit-test
+    #     command: ["npm", "run", "test"]
+    #     build:
+    #         context: .
+    #         dockerfile: Dockerfile
+    #     volumes:
+    #         - type: bind
+    #           source: ./
+    #           target: /app
+    #         - type: volume
+    #           target: /app/node_modules
+    #     stdin_open: true
+    #     tty: true
+    #     depends_on:
+    #         - web

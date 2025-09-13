@@ -1,2 +1,3 @@
 docker-compose exec -T web npm run format
 docker-compose exec -T web npm run lint
+docker-compose exec -T web npm run test

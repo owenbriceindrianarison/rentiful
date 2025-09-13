@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "Home from nextintl",
+        "title": "Home from docker container",
         "description": "Home description"
     },
     "landing": {
