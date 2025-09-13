@@ -1,1 +1,1 @@
-npx --no -- commitlint --edit
+docker-compose exec -T web npx --no -- commitlint --edit
