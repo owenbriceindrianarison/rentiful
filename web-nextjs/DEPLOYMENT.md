@@ -1,6 +1,6 @@
-# Guide de Déploiement - Rentiful NextJS
+# Guide de Déploiement - Rentiful  Web NextJS
 
-Ce guide explique comment déployer l'application Rentiful NextJS en utilisant Docker.
+Ce guide explique comment déployer l'application Rentiful Web NextJS en utilisant Docker.
 
 ## Environnements
 
@@ -40,10 +40,10 @@ Ou manuellement :
 
 ```bash
 # Construire l'image
-docker build -t rentiful-nextjs-prod -f Dockerfile.prod .
+docker build -t web-prod -f Dockerfile.prod .
 
 # Démarrer le container
-docker run -p 3000:3000 rentiful-nextjs-prod
+docker run -p 3000:3000 web-prod
 
 # Ou utiliser docker-compose
 docker-compose -f docker-compose.prod.yml up -d
@@ -102,10 +102,10 @@ L'environnement de production inclut un health check qui vérifie que l'applicat
 
 ```bash
 # Voir les logs du container de production
-docker logs rentiful-nextjs-prod
+docker logs web-prod
 
 # Suivre les logs en temps réel
-docker logs -f rentiful-nextjs-prod
+docker logs -f web-prod
 ```
 
 ## Optimisations
@@ -147,5 +147,5 @@ docker images
 docker system prune
 
 # Rebuild sans cache
-docker build --no-cache -t rentiful-nextjs-prod -f Dockerfile.prod .
+docker build --no-cache -t web-prod -f Dockerfile.prod .
 ```

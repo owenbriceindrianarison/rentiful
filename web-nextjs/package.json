@@ -1,5 +1,5 @@
 {
-    "name": "rentiful-nextjs",
+    "name": "web-nextjs",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -16,7 +16,7 @@
         "test:docker": "docker-compose exec -T web npm test",
         "test:docker:watch": "docker-compose exec -T web npm run test:watch",
         "test:docker:coverage": "docker-compose exec -T web npm run test:coverage",
-        "build:prod": "docker build -t rentiful-nextjs-prod -f Dockerfile.prod .",
+        "build:prod": "docker build -t web-prod -f Dockerfile.prod .",
         "start:prod": "docker-compose -f docker-compose.prod.yml up -d",
         "stop:prod": "docker-compose -f docker-compose.prod.yml down"
     },

@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
     web:
-        container_name: rentiful-nextjs-prod
+        container_name: web-prod
         build:
             context: .
             dockerfile: Dockerfile.prod
