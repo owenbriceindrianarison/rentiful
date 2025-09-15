@@ -1,0 +1,3 @@
+# Dockerfile.pgadmin
+FROM dpage/pgadmin4:latest
+# Pas de COPY de servers.json tant que tu ne l'as pas créé

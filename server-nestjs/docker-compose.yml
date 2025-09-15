@@ -1,0 +1,78 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+    container_name: nest_api
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${POSTGRES_DB}
+      DB_USER: ${POSTGRES_USER}
+      DB_PASS: ${POSTGRES_PASSWORD}
+      NODE_ENV: development
+      CHOKIDAR_USEPOLLING: 'true'
+    ports:
+      - '${API_PORT:-4000}:4000'
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+      - type: volume
+        target: /app/node_modules
+    restart: unless-stopped
+
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+      args:
+        TZ: ${TZ:-Europe/Paris}
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      TZ: ${TZ:-Europe/Paris}
+    ports:
+      - '${POSTGRES_PORT:-5432}:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      # Tu peux monter des scripts init si tu veux :
+      # - ./db/initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB -h localhost || exit 1',
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  pgadmin:
+    build:
+      context: .
+      dockerfile: Dockerfile.pgadmin
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - '${PGADMIN_PORT:-5050}:80'
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      # - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+    restart: unless-stopped
+
+volumes:
+  db_data:
+  pgadmin_data:

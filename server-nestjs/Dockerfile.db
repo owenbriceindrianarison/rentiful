@@ -1,0 +1,15 @@
+# Dockerfile.db — PostgreSQL 16 + PostGIS 3.4 (Alpine)
+FROM postgis/postgis:16-3.4-alpine
+
+# Fuseau horaire (facultatif)
+ARG TZ=Europe/Paris
+ENV TZ=${TZ}
+
+# Paquets utiles (tzdata pour le TZ)
+RUN apk add --no-cache tzdata
+
+# Dossier d'initialisation (scripts .sql/.sh exécutés au premier démarrage)
+RUN mkdir -p /docker-entrypoint-initdb.d
+
+# Créer PostGIS automatiquement à l'init
+COPY 01-create-postgis.sql /docker-entrypoint-initdb.d/
