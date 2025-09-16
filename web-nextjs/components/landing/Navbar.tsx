@@ -38,7 +38,7 @@ export function Navbar() {
                         </div>
                     </Link>
                 </div>
-                <p className='text-primary-200 hidden md:block'>
+                <p className='text-primary-200 hidden lg:block'>
                     {t('description')}
                     search
                 </p>
